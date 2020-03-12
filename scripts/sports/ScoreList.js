@@ -1,6 +1,9 @@
 import { useScores } from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
+
+const eventHub = document.querySelector("#container")
+
 export const ScoreList = () => {
     const scores = useScores()
     return render(scores)
@@ -12,4 +15,15 @@ const render = scoreCollection => {
             ${scoreCollection.map(score => Score(score)).join("")}
         </article>
     `
+}
+
+export const scoreEvent = () => {
+  eventHub.addEventListener("colorChosen", event => {
+    const allScoreComponents = document.querySelectorAll('.score')
+      const color = event.detail.color
+      
+      for (const score of allScoreComponents) {
+        score.classList.add(`${color}`)
+      }
+  })
 }
