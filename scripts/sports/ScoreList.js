@@ -23,6 +23,7 @@ export const scoreEvent = () => {
       const color = event.detail.color
       
       for (const score of allScoreComponents) {
+        score.classList = ['score']
         score.classList.add(`${color}`)
       }
   })
