@@ -29,6 +29,18 @@ export const scoreColorEvent = () => {
   })
 }
 
+export const scoreFontEvent = () => {
+  eventHub.addEventListener("fontChosen", event => {
+    const allScoreComponents = document.querySelectorAll('.score')
+      const font = event.detail.font
+      
+      for (const score of allScoreComponents) {
+        score.classList = ['score']
+        score.classList.add(`${font}`)
+      }
+  })
+}
+
 export const scoreBorderEvent = () => {
   eventHub.addEventListener("pixelBorder", event => {
     const allScoreComponents = document.querySelectorAll('.score')

@@ -39,3 +39,15 @@ export const newsColorEvent = () => {
         }
     })
   }
+
+  export const newsFontEvent = () => {
+    eventHub.addEventListener("fontChosen", event => {
+      const allNewsComponents = document.querySelectorAll('.newsItem')
+        const font = event.detail.font
+        
+        for (const news of allNewsComponents) {
+          news.classList = ['newsItem']
+          news.classList.add(`${font}`)
+        }
+    })
+  }

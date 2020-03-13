@@ -39,3 +39,15 @@ export const favoriteColorEvent = () => {
         }
     })
   }
+
+  export const favoriteFontEvent = () => {
+    eventHub.addEventListener("fontChosen", event => {
+      const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
+        const font = event.detail.font
+        
+        for (const favorite of allFavoriteComponents) {
+          favorite.classList = ['favoriteItem']
+          favorite.classList.add(`${font}`)
+        }
+    })
+  }
