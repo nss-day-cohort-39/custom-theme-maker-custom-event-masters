@@ -21,9 +21,18 @@ export const favoriteColorEvent = () => {
       const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
         const color = event.detail.color
         
+        // Get current classes of favoriteItem
+        const currentClasses = allFavoriteComponents.classList
+
+        // Change all elements with class favoriteItem and add the selected color
         for (const favorite of allFavoriteComponents) {
-          favorite.classList = ['favoriteItem']
-          favorite.classList.add(`${color}`)
+          favorite.classList = currentClasses
+          if(favorite.classList.color == true){
+            favorite.classList.replace()
+          }
+          else {
+            favorite.classList.add(`${color}`)
+          }
         }
     })
   }
