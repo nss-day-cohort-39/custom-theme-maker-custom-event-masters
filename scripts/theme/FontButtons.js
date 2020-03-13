@@ -15,9 +15,9 @@ contentTarget.addEventListener("click", clickEvent => {
             add a property to the `detail` object that specifies
             which font was chosen
         */
-        const colorFontEvent = new CustomEvent("fontChosen", {
+        const fontChosenEvent = new CustomEvent("fontChosen", {
             detail: {
-                color: chosenFont
+                font: chosenFont
             }
         })
 
