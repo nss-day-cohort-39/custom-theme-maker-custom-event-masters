@@ -27,3 +27,15 @@ export const favoriteBorderEvent = () => {
       }
   })
 }
+
+export const favoriteColorEvent = () => {
+    eventHub.addEventListener("colorChosen", event => {
+      const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
+        const color = event.detail.color
+        
+        for (const favorite of allFavoriteComponents) {
+          favorite.classList = ['favoriteItem']
+          favorite.classList.add(`${color}`)
+        }
+    })
+  }

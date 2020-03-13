@@ -27,3 +27,15 @@ export const newsBorderEvent = () => {
       }
   })
 }
+
+export const newsColorEvent = () => {
+    eventHub.addEventListener("colorChosen", event => {
+      const allNewsComponents = document.querySelectorAll('.newsItem')
+        const color = event.detail.color
+        
+        for (const news of allNewsComponents) {
+          news.classList = ['newsItem']
+          news.classList.add(`${color}`)
+        }
+    })
+  }
