@@ -17,7 +17,19 @@ const render = scoreCollection => {
     `
 }
 
-export const scoreEvent = () => {
+export const scoreColorEvent = () => {
+  eventHub.addEventListener("colorChosen", event => {
+    const allScoreComponents = document.querySelectorAll('.score')
+      const color = event.detail.color
+
+      for (const score of allScoreComponents) {
+        score.classList = ['score']
+        score.classList.add(`${color}`)
+      }
+  })
+}
+
+export const scoreBorderEvent = () => {
   eventHub.addEventListener("colorChosen", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const color = event.detail.color

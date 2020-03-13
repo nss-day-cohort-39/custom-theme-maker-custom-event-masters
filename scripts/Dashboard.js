@@ -9,6 +9,6 @@ export const Dashboard = () => {
         ${ScoreList()}
         ${NewsList()}
         ${FavoritesList()}
-        ${scoreEvent()}
+        ${scoreCOlorEvent()}
     `
 }

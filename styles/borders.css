@@ -1,0 +1,11 @@
+.onepixel {
+  border-radius: 1px;
+}
+
+.threepixel {
+  border-radius: 3px;
+}
+
+.fivepixel {
+  border-radius: 5px;
+}
