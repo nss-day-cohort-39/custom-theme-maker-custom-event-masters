@@ -16,7 +16,7 @@ const render = newsCollection => {
     `
 }
 
-export const newsBorderEvent = () => {
+const newsBorderEvent = () => {
   eventHub.addEventListener("pixelBorder", event => {
     const allNewsComponents = document.querySelectorAll('.newsItem')
       const pixel = event.detail.borderSize
@@ -28,7 +28,7 @@ export const newsBorderEvent = () => {
   })
 }
 
-export const newsColorEvent = () => {
+const newsColorEvent = () => {
     eventHub.addEventListener("colorChosen", event => {
       const allNewsComponents = document.querySelectorAll('.newsItem')
         const color = event.detail.color
@@ -40,7 +40,7 @@ export const newsColorEvent = () => {
     })
   }
 
-  export const newsFontEvent = () => {
+const newsFontEvent = () => {
     eventHub.addEventListener("fontChosen", event => {
       const allNewsComponents = document.querySelectorAll('.newsItem')
         const font = event.detail.font
@@ -50,4 +50,10 @@ export const newsColorEvent = () => {
           news.classList.add(`${font}`)
         }
     })
+  }
+
+  export const newsEvents = () => {
+    newsBorderEvent()
+    newsColorEvent()
+    newsFontEvent()
   }

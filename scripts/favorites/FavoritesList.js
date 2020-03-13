@@ -16,7 +16,7 @@ const render = favoriteCollection => {
     `
 }
 
-export const favoriteBorderEvent = () => {
+const favoriteBorderEvent = () => {
   eventHub.addEventListener("pixelBorder", event => {
     const allfavoriteComponents = document.querySelectorAll('.favoriteItem')
       const pixel = event.detail.borderSize
@@ -28,26 +28,32 @@ export const favoriteBorderEvent = () => {
   })
 }
 
-export const favoriteColorEvent = () => {
-    eventHub.addEventListener("colorChosen", event => {
-      const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
-        const color = event.detail.color
-        
-        for (const favorite of allFavoriteComponents) {
-          favorite.classList = ['favoriteItem']
-          favorite.classList.add(`${color}`)
-        }
-    })
-  }
+const favoriteColorEvent = () => {
+  eventHub.addEventListener("colorChosen", event => {
+    const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
+      const color = event.detail.color
+      
+      for (const favorite of allFavoriteComponents) {
+        favorite.classList = ['favoriteItem']
+        favorite.classList.add(`${color}`)
+      }
+  })
+}
 
-  export const favoriteFontEvent = () => {
-    eventHub.addEventListener("fontChosen", event => {
-      const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
-        const font = event.detail.font
-        
-        for (const favorite of allFavoriteComponents) {
-          favorite.classList = ['favoriteItem']
-          favorite.classList.add(`${font}`)
-        }
-    })
-  }
+const favoriteFontEvent = () => {
+  eventHub.addEventListener("fontChosen", event => {
+    const allFavoriteComponents = document.querySelectorAll('.favoriteItem')
+      const font = event.detail.font
+      
+      for (const favorite of allFavoriteComponents) {
+        favorite.classList = ['favoriteItem']
+        favorite.classList.add(`${font}`)
+      }
+  })
+}
+  
+export const favoriteEvents = () => {
+  favoriteBorderEvent()
+  favoriteColorEvent()
+  favoriteFontEvent()
+}

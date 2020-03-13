@@ -17,11 +17,11 @@ const render = scoreCollection => {
     `
 }
 
-export const scoreColorEvent = () => {
+const scoreColorEvent = () => {
   eventHub.addEventListener("colorChosen", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const color = event.detail.color
-
+      
       for (const score of allScoreComponents) {
         score.classList = ['score']
         score.classList.add(`${color}`)
@@ -29,7 +29,7 @@ export const scoreColorEvent = () => {
   })
 }
 
-export const scoreFontEvent = () => {
+const scoreFontEvent = () => {
   eventHub.addEventListener("fontChosen", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const font = event.detail.font
@@ -41,7 +41,7 @@ export const scoreFontEvent = () => {
   })
 }
 
-export const scoreBorderEvent = () => {
+const scoreBorderEvent = () => {
   eventHub.addEventListener("pixelBorder", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const pixel = event.detail.borderSize
@@ -51,4 +51,10 @@ export const scoreBorderEvent = () => {
         score.classList.add(`${pixel}`)
       }
   })
+}
+
+export const scoreEvents = () => {
+  scoreBorderEvent()
+  scoreColorEvent()
+  scoreFontEvent()
 }
