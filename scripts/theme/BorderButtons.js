@@ -1,9 +1,8 @@
-const HTMLTarget = document.querySelector('.borderSizes');
 const eventHub = document.querySelector('#container')
 
-HTMLTarget.addEventListener('click', clickevent => {
+eventHub.addEventListener('click', clickevent => {
   
-  if(clickevent.target.value.endsWith('pixel')) {
+  if(clickevent.target.value.includes('pixel')) {
     const truePixel = clickevent.target.value;
 
     const pixelEvent = new CustomEvent('pixelBorder', {

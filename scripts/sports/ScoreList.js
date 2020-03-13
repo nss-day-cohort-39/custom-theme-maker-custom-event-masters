@@ -30,13 +30,13 @@ export const scoreColorEvent = () => {
 }
 
 export const scoreBorderEvent = () => {
-  eventHub.addEventListener("colorChosen", event => {
+  eventHub.addEventListener("pixelBorder", event => {
     const allScoreComponents = document.querySelectorAll('.score')
-      const color = event.detail.color
+      const pixel = event.detail.borderSize
 
       for (const score of allScoreComponents) {
         score.classList = ['score']
-        score.classList.add(`${color}`)
+        score.classList.add(`${pixel}`)
       }
   })
 }

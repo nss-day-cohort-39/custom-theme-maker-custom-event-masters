@@ -1,11 +1,11 @@
 .onepixel {
-  border-radius: 1px;
+  border: 1px solid black;
 }
 
-.threepixel {
-  border-radius: 3px;
+.threepixels {
+  border: 3px solid black;
 }
 
-.fivepixel {
-  border-radius: 5px;
+.fivepixels {
+  border: 5px solid black;
 }
