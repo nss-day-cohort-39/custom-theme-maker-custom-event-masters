@@ -17,7 +17,7 @@ const render = scoreCollection => {
     `
 }
 
-export const scoreEvent = () => {
+export const scoreColorEvent = () => {
   eventHub.addEventListener("colorChosen", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const color = event.detail.color
@@ -29,7 +29,7 @@ export const scoreEvent = () => {
   })
 }
 
-export const scoreEvent = () => {
+export const scoreFontEvent = () => {
   eventHub.addEventListener("fontChosen", event => {
     const allScoreComponents = document.querySelectorAll('.score')
       const font = event.detail.font
