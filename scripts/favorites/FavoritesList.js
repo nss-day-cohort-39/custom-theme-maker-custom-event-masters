@@ -16,6 +16,18 @@ const render = favoriteCollection => {
     `
 }
 
+export const favoriteBorderEvent = () => {
+  eventHub.addEventListener("pixelBorder", event => {
+    const allfavoriteComponents = document.querySelectorAll('.favoriteItem')
+      const pixel = event.detail.borderSize
+
+      for (const favorite of allfavoriteComponents) {
+        favorite.classList = ['favoriteItem']
+        favorite.classList.add(`${pixel}`)
+      }
+  })
+}
+
 export const favoriteColorEvent = () => {
     eventHub.addEventListener("colorChosen", event => {
       const allFavoriteComponents = document.querySelectorAll('.favoriteItem')

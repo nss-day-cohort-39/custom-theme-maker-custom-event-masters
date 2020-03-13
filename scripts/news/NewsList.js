@@ -16,6 +16,18 @@ const render = newsCollection => {
     `
 }
 
+export const newsBorderEvent = () => {
+  eventHub.addEventListener("pixelBorder", event => {
+    const allNewsComponents = document.querySelectorAll('.newsItem')
+      const pixel = event.detail.borderSize
+
+      for (const news of allNewsComponents) {
+        news.classList = ['newsItem']
+        news.classList.add(`${pixel}`)
+      }
+  })
+}
+
 export const newsColorEvent = () => {
     eventHub.addEventListener("colorChosen", event => {
       const allNewsComponents = document.querySelectorAll('.newsItem')
