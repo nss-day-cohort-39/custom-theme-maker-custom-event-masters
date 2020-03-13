@@ -1,6 +1,6 @@
-import { ScoreList, scoreColorEvent } from "./sports/ScoreList.js"
-import { NewsList, newsColorEvent } from "./news/NewsList.js"
-import { FavoritesList, favoriteColorEvent } from "./favorites/FavoritesList.js"
+import { ScoreList, scoreColorEvent, scoreBorderEvent } from "./sports/ScoreList.js"
+import { NewsList, newsColorEvent, newsBorderEvent } from "./news/NewsList.js"
+import { FavoritesList, favoriteColorEvent, favoriteBorderEvent } from "./favorites/FavoritesList.js"
 import { ThemeOptions } from "./theme/ThemeOptions.js"
 
 export const Dashboard = () => {
@@ -10,6 +10,9 @@ export const Dashboard = () => {
         ${NewsList()}
         ${FavoritesList()}
         ${scoreColorEvent()}
+        ${scoreBorderEvent()}
+        ${newsBorderEvent()}
+        ${favoriteBorderEvent()}
         ${newsColorEvent()}
         ${favoriteColorEvent()}
     `
