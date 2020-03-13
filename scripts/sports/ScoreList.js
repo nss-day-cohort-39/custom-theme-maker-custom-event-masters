@@ -28,3 +28,15 @@ export const scoreEvent = () => {
       }
   })
 }
+
+export const scoreEvent = () => {
+  eventHub.addEventListener("fontChosen", event => {
+    const allScoreComponents = document.querySelectorAll('.score')
+      const font = event.detail.font
+      
+      for (const score of allScoreComponents) {
+        score.classList = ['score']
+        score.classList.add(`${font}`)
+      }
+  })
+}
