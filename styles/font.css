@@ -1,16 +1,16 @@
     .xsmall{
-    font-weight: bold;
+    font-size: 8px;
     }
     
     .small {
-    font-weight: 200;
+    font-size: 12px;
     }
     
     .large {
-    font-weight: 400;
+    font-size: 18px;
     }
     
     .xlarge {
-    font-weight: 600;
+    font-size: 28px;
     }
     
